@@ -4,7 +4,7 @@ stack up and running.
 
 1) Windows Subsystem for Linux (WSL)
 
-    Installation instructions are bases on [these Windows docs](https://docs.microsoft.com/en-us/windows/wsl/install-win10)
+    Installation instructions are based on [these Windows docs](https://docs.microsoft.com/en-us/windows/wsl/install-win10)
 
     1) Enable the feature
 
@@ -47,7 +47,7 @@ stack up and running.
             ```
             cd /mnt/
             ```
-            or, you can probably get all the way to your documents folder with
+            or, you can probably get all the way to your Documents folder with
             ```
             cd /mnt/c/Users/[your windows username]/Documents
             ```
@@ -122,6 +122,7 @@ stack up and running.
             ```
             rails new testapp
             ```
+            (this may take a little while)
 
         3) Change diretories into the new application
 
@@ -144,4 +145,24 @@ stack up and running.
             Congrats, you did it!
 
 4) Visual Studio Code
+
+    1) Go to [https://code.visualstudio.com/](https://code.visualstudio.com/)
+    and select "Download for Windows"
+    2) After the download completes run the installer and click through the
+    prompts
+    3) Open Visual Studio Code from the start menu
+    4) Select `File>Open Folder` and then select the `testapp` you created
+    5) You can now inspect all the files of your first rails app in VS Code, Congrats!
+
+## Notes
+
+These instructions were written by Matt Kern for use in Carnegie Mellon
+Univeristy's 67272.
+
+Please let me know if you have any problems with this, find typos, or have
+questions:
+
+mjkern@andrew.cmu.edu
+
+qapla'
 
