@@ -86,7 +86,7 @@ stack up and running.
         address bar (or open the link)
 
             You should see the basic rails splash page:
-            TODO: add image
+            ![splash page image](rails-welcome.png)
 
             Congrats, you did it!
 
