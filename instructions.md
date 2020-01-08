@@ -4,7 +4,60 @@ stack up and running.
 
 1) Windows Subsystem for Linux (WSL)
 
-    TODO: make sure students know how to use cd /mnt/ to get to the windows partition
+    Installation instructions are bases on [these Windows docs](https://docs.microsoft.com/en-us/windows/wsl/install-win10)
+
+    1) Enable the feature
+
+        Open windows powershell and enter:
+        ```
+        Enable-WindowsOptionalFeature -Online -FeatureName Microsoft-Windows-Subsystem-Linux
+        ```
+
+    2) Restart your computer when prompted
+
+    3) Install Ubuntu 18.04 on WSL
+
+        Find [Ubuntu 18.04 in the Windows store](https://www.microsoft.com/store/apps/9N9TNGVNDL3Q)
+        and select "Get" on the distro page.
+
+    4) Initialize your Ubuntu installation
+
+        1) Launch Ubuntu from your start menu (it will take a minute to open)
+        2) When prompted, enter a username of your choice
+        3) When prompted, enter a password of your choice
+        4) Record the credentials for the account you just created somewhere
+        that you will not lose them
+        5) Make sure you are running the most recent software (and will use
+        it in the future)
+
+            Enter this in the bash shell:
+            ```
+            sudo apt update && sudo apt upgrade
+            ```
+    5) Nice work, now a few helpful things
+
+        1) Entering `ls` will list everything in the working directory. Right
+        now you will probably see nothing.
+        2) `pwd` will print the working directory (where you are right now)
+        3) Entering `cd [some path]` will change the current directory to the
+        given path.
+        4) *Important:* you can get to your windows files (and you will likely
+          want to do this for the rest of this class)
+
+            ```
+            cd /mnt/
+            ```
+            or, you can probably get all the way to your documents folder with
+            ```
+            cd /mnt/c/Users/[your windows username]/Documents
+            ```
+
+        5) (Recommended) Create a folder for this class in your Documents
+        folder (or somewhere you prefer)
+
+            ```
+            mkdir 67272 # creates a folder named 67272
+            ```
 
 2) Ruby 2.4.3
     1) Open a bash shell
