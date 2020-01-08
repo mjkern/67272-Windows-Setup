@@ -86,7 +86,7 @@ stack up and running.
         address bar (or open the link)
 
             You should see the basic rails splash page:
-            ![splash page image](rails-welcome.png)
+            ![splash page image](https://github.com/mjkern/67272-Windows-Setup/blob/master/rails_welcome.png?raw=true)
 
             Congrats, you did it!
 
