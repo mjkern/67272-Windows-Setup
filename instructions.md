@@ -4,6 +4,8 @@ stack up and running.
 
 1) Windows Subsystem for Linux (WSL)
 
+    TODO: make sure students know how to use cd /mnt/ to get to the windows partition
+
 2) Ruby 2.4.3
     1) Open a bash shell
 
@@ -40,4 +42,53 @@ stack up and running.
         ```
         You should see `=* ruby-2.4.3` in the output.
 
-3) Visual Studio Code
+3) Rails 5.1.6
+    1) Install nodejs (a prerequisite)
+
+        ```
+        curl -sL https://deb.nodesource.com/setup_12.x | sudo -E bash -
+        sudo apt-get install -y nodejs
+        ```
+
+    2) Install Rails 5.1.6
+
+        ```
+        gem install rails -v=5.1.6
+        ```
+
+    3) Test installation
+        1) Pick a good dictory
+
+            We are going to create a trivial web app. Make sure you are in a
+            folder that you want to be in. Use `cd` (and maybe `mkdir`) as expained
+            in the WSL setup instructions. The new app will be created in it's own
+            folder so no need to make a specific one.
+
+        2) Create an application with the name "testapp"
+
+            ```
+            rails new testapp
+            ```
+
+        3) Change diretories into the new application
+
+            ```
+            cd testapp
+            ```
+
+        4) Run the application
+
+            ```
+            rails server
+            ```
+
+        5) Open your browser and put [localhost:3000](localhost:3000) in the
+        address bar (or open the link)
+
+            You should see the basic rails splash page:
+            TODO: add image
+
+            Congrats, you did it!
+
+4) Visual Studio Code
+
