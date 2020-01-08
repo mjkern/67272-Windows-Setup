@@ -154,7 +154,22 @@ stack up and running.
     4) Select `File>Open Folder` and then select the `testapp` you created
     5) You can now inspect all the files of your first rails app in VS Code, Congrats!
 
-## Notes
+## Advanced Notes
+
+* "Remote - WSL" looks like an interesting Visual Studio Code extension but I
+don't know much about it. There may also be other helpful ones
+* Other versions of Ubuntu will almost certainly work fine, I just suggest
+bionic beaver (18.04) here for simplicity
+* A note WSL:
+
+    There are currently two versions of WSL. I suspect that we all have the
+    original version but it may be possible that someone hase WSL2. These are
+    fundamentally different - the original is a compatability layer around the
+    Windows kernal while WSL2 manages an entirely seperate kernal via a
+    hypervisor. I believe all of these instructions will work just as well
+    (probably better) on WSL2, but don't have an easy way to test that.
+
+## Author's Note
 
 These instructions were written by Matt Kern for use in Carnegie Mellon
 Univeristy's 67272.
