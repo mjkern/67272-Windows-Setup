@@ -110,7 +110,7 @@ stack up and running.
         ```
 
     3) Test installation
-        1) Pick a good dictory
+        1) Pick a good directory
 
             We are going to create a trivial web app. Make sure you are in a
             folder that you want to be in. Use `cd` (and maybe `mkdir`) as expained
@@ -163,7 +163,7 @@ bionic beaver (18.04) here for simplicity
 * A note WSL:
 
     There are currently two versions of WSL. I suspect that we all have the
-    original version but it may be possible that someone hase WSL2. These are
+    original version but it may be possible that someone has WSL2. These are
     fundamentally different - the original is a compatability layer around the
     Windows kernal while WSL2 manages an entirely seperate kernal via a
     hypervisor. I believe all of these instructions will work just as well
