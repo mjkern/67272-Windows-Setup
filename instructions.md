@@ -8,7 +8,7 @@ stack up and running.
 
     1) Enable the feature
 
-        Open windows powershell and enter:
+        Open windows powershell as an administrator and enter:
         ```
         Enable-WindowsOptionalFeature -Online -FeatureName Microsoft-Windows-Subsystem-Linux
         ```
