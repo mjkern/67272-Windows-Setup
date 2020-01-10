@@ -52,7 +52,10 @@ stack up and running.
             cd /mnt/c/Users/[your windows username]/Documents
             ```
 
-        5) (Recommended) Create a folder for this class in your Documents
+        5) *Important:* you can paste from you windows clip board into wsl by
+        right-clicking. You will likely find this very useful.
+
+        6) (Recommended) Create a folder for this class in your Documents
         folder (or somewhere you prefer)
 
             ```
@@ -159,7 +162,8 @@ stack up and running.
 * "Remote - WSL" looks like an interesting Visual Studio Code extension but I
 don't know much about it. There may also be other helpful ones
 * Other versions of Ubuntu will almost certainly work fine, I just suggest
-bionic beaver (18.04) here for simplicity
+bionic beaver (18.04) here for simplicity. If you simply choose "Ubuntu" in
+the windows store then I believe it will keep you up to date with the most recent version
 * A note WSL:
 
     There are currently two versions of WSL. I suspect that we all have the
