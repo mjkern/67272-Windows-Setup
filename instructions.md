@@ -18,11 +18,11 @@ stack up and running.
     3) Install Ubuntu 18.04 on WSL
 
         Find [Ubuntu 18.04 in the Windows store](https://www.microsoft.com/store/apps/9N9TNGVNDL3Q)
-        and select "Get" on the distro page.
+        and select "Get" on the distro page. Then select "Install".
 
     4) Initialize your Ubuntu installation
 
-        1) Launch Ubuntu from your start menu (it will take a minute to open)
+        1) Launch Ubuntu 18.04 (it will take a minute to open)
         2) When prompted, enter a username of your choice
         3) When prompted, enter a password of your choice
         4) Record the credentials for the account you just created somewhere
@@ -34,6 +34,9 @@ stack up and running.
             ```
             sudo apt update && sudo apt upgrade
             ```
+            Running this will take a while. You may be prompted about restarting
+            services (such as ssh), this is fine.
+
     5) Nice work, now a few helpful things
 
         1) Entering `ls` will list everything in the working directory. Right
@@ -62,43 +65,47 @@ stack up and running.
             mkdir 67272 # creates a folder named 67272
             ```
 
-2) Ruby 2.4.3
-    1) Open a bash shell
-
-        This is what you just set up and the rest of the Ruby and Rails
-        installation instructions will be run in this shell window. When
-        you see a command in these instructions you can simply enter it after
-        the `$` in your shell window.
-
-    2) Install gpg2 (a prerequisite for rvm)
+2) Ruby 2.5.7
+    1) Install gpg2 (a prerequisite for rvm)
 
         ```
         sudo apt-get install gnupg2
         ```
+        Note: unless otherwise specified all of these instructions are meant
+        to be run in the Ubuntu installation you just set up.
 
-    3) Install rvm (based on [these instructions](https://rvm.io/))
+    2) Install rvm (based on [these instructions](https://rvm.io/))
 
         ```
         gpg2 --recv-keys 409B6B1796C275462A1703113804BB82D39DC0E3 7D2BAF1CF37B13E2069D6956105BD0E739499BDB
         \curl -sSL https://get.rvm.io | bash -s stable
         ```
 
-    4) Close your bash shell and open a new one (or `source ~/.bashrc` should work)
+    3) Close your bash shell and open a new one (or `source ~/.bashrc` should work)
 
-    5) Install Ruby 2.4.3
+    4) Install Ruby 2.5.7 (this will take a while)
 
         ```
-        rvm install 2.4.3
+        rvm install 2.5.7
         ```
 
-    6) Check installation
+    5) Set default Ruby version
+
+        ```
+        bash --login
+        rvm --default use 2.5.7
+        ```
+
+    6) Close and re-open WSL
+
+    7) Check installation
 
         ```
         rvm list
         ```
-        You should see `=* ruby-2.4.3` in the output.
+        You should see `=* ruby-2.5.7` in the output.
 
-3) Rails 5.1.6
+3) Rails 5.2.3
     1) Install nodejs (a prerequisite)
 
         ```
@@ -106,10 +113,10 @@ stack up and running.
         sudo apt-get install -y nodejs
         ```
 
-    2) Install Rails 5.1.6
+    2) Install Rails 5.2.3 (this will take a while)
 
         ```
-        gem install rails -v=5.1.6
+        gem install rails -v=5.2.3 --no-ri --no-rdoc
         ```
 
     3) Test installation
@@ -133,6 +140,14 @@ stack up and running.
             cd testapp
             ```
 
+        4) Install the new app's dependencies
+
+            ```
+            bundle install
+            ```
+            You may have to try this command multiple times. If it fails in a
+            consistent way then seek help.
+
         4) Run the application
 
             ```
@@ -145,7 +160,8 @@ stack up and running.
             You should see the basic rails splash page:
             ![splash page image](https://github.com/mjkern/67272-Windows-Setup/blob/master/rails_welcome.png?raw=true)
 
-            Congrats, you did it!
+            Congrats, you did it! (When you're done the key combination CTRL c
+            will stop the server)
 
 4) Visual Studio Code
 
