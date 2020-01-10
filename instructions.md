@@ -116,7 +116,7 @@ stack up and running.
     2) Install Rails 5.2.3 (this will take a while)
 
         ```
-        gem install rails -v=5.2.3 --no-ri --no-rdoc
+        gem install rails -v=5.2.3
         ```
 
     3) Test installation
