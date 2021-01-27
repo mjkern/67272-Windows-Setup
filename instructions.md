@@ -61,7 +61,7 @@ stack up and running.
         Find [Ubuntu 20.04 LTS in the Windows store](https://www.microsoft.com/en-us/p/ubuntu-2004-lts/9n6svws3rx71?activetab=pivot:overviewtab)
         and select "Get" on the distro page. Then select "Install".
 
-    4) Initialize your Ubuntu installation
+    7) Initialize your Ubuntu installation
 
         1) Launch an Ubuntu 20.04 terminal (it will take a few minutes)
 
@@ -77,47 +77,57 @@ stack up and running.
 
             Enter this in terminal:
             ```
-            sudo apt update && sudo apt upgrade
+            sudo apt update -y && sudo apt upgrade -y
             ```
-            Running this will take a while. You may be prompted about restarting
-            services (such as ssh), this is fine.
 
-    5) Nice work, now a few helpful things
+            When prompted, enter the password you just created. You will not see
+            the cursor move as you type - this is expected and is a security
+            feature. Press enter after typing your password.
 
-        1) Entering `ls` will list everything in the working directory. Right
-        now you will probably see nothing.
-        2) `pwd` will print the working directory (where you are right now)
-        3) Entering `cd [some path]` will change the current directory to the
-        given path.
-        4) *Important:* you can get to your windows files (and you will likely
-          want to do this for the rest of this class)
+            Remember how this password process works - this will often happen
+            when you use the `sudo` keyword (which is essentially running the
+            command as an administrator).
+
+            This will take a few minutes.
+
+    8) Nice work! Now a few things you should know:
+
+        - you can paste into the terminal from you windows clip board by
+        right-clicking
+        - you can get to your windows files if you really need to, although this
+        is slower and we will recommend that you keep files for this class all
+        in the linux file system that you are in right now
 
             ```
-            cd /mnt/
+            cd /mnt/c
             ```
+
             or, you can probably get all the way to your Documents folder with
             ```
-            cd /mnt/c/Users/[your windows username]/Documents
+            cd /mnt/c/Documents\ and\ Settings/<your windows username>/Documents
+            ```
+            where `<your windows username>` is the first 4 characters of your
+            windows username.
+
+            Note: on wsl 1 this is more likely
+            ```
+            cd /mnt/c/Users/<your windows username>/Documents
             ```
 
-        5) *Important:* you can paste from you windows clip board into wsl by
-        right-clicking. You will likely find this very useful.
+        - if you are new to linux, here is
+        [a cheat sheet for common terminal commands](http://www.mathcs.emory.edu/~valerie/courses/fall10/155/resources/unix_cheatsheet.html)
 
-        6) (Recommended) Create a folder for this class in your Documents
-        folder (or somewhere you prefer)
+        - if you start typing something terminal, entering a tab will try to
+        autocomplete the command 
 
-            ```
-            mkdir 67272 # creates a folder named 67272
-            ```
-
-2) Ruby 2.5.7
+2) Ruby 2.6.6
     1) Install gpg2 (a prerequisite for rvm)
 
         ```
-        sudo apt-get install gnupg2
+        sudo apt install -y gnupg2
         ```
         Note: unless otherwise specified all of these instructions are meant
-        to be run in the Ubuntu installation you just set up.
+        to be run in a terminal for the Ubuntu distribution you just set up.
 
     2) Install rvm (based on [these instructions](https://rvm.io/))
 
@@ -126,58 +136,71 @@ stack up and running.
         \curl -sSL https://get.rvm.io | bash -s stable
         ```
 
-    3) Close your bash shell and open a new one (or `source ~/.bashrc` should work)
+        If this fails, try changing the keyserver url to one of the other
+        options listed on the [rvm troubleshooting page](https://rvm.io/rvm/security)
 
-    4) Install Ruby 2.5.7 (this will take a while)
+    3) Close your terminal and open a new one (or `source ~/.bashrc` should work)
+
+    4) Install Ruby 2.6.6 (this may take a minute)
 
         ```
-        rvm install 2.5.7
+        rvm install 2.6.6
         ```
 
     5) Set default Ruby version
 
         ```
         bash --login
-        rvm --default use 2.5.7
+        rvm --default use 2.6.6
         ```
 
-    6) Close and re-open WSL
+    6) Close and re-open the terminal
 
     7) Check installation
 
         ```
         rvm list
         ```
-        You should see `=* ruby-2.5.7` in the output.
+        You should see `=* ruby-2.6.6` in the output.
 
-3) Rails 5.2.3
+3) Rails 5.2.4.4
     1) Install nodejs (a prerequisite)
 
         ```
         curl -sL https://deb.nodesource.com/setup_12.x | sudo -E bash -
-        sudo apt-get install -y nodejs
+        sudo apt install -y nodejs
         ```
 
-    2) Install Rails 5.2.3 (this will take a while)
+    2) Install Rails 5.2.4.4 (this may take a few minutes)
 
         ```
-        gem install rails -v=5.2.3
+        gem install rails -v=5.2.4.4
         ```
 
     3) Test installation
         1) Pick a good directory
 
             We are going to create a trivial web app. Make sure you are in a
-            folder that you want to be in. Use `cd` (and maybe `mkdir`) as expained
-            in the WSL setup instructions. The new app will be created in it's own
-            folder so no need to make a specific one.
+            folder that you want to be in.
+
+            I recommend creating a folder for each lab (and phase) right where
+            you are, the `home` directory. You will be here by default when you
+            open a terminal, and can always get back here with `cd ~`. You
+            should avoid working in any path that begins with `/mnt/` for
+            performance reasons (if you are using WSL 2).
+
+            So use `mkdir` and `cd` to get where you want to be. For example:
+            ```
+            mkdir lab01
+            cd lab01
+            ```           
 
         2) Create an application with the name "testapp"
 
             ```
             rails new testapp
             ```
-            (this may take a little while)
+            (this may take a minute)
 
         3) Change diretories into the new application
 
@@ -190,8 +213,11 @@ stack up and running.
             ```
             bundle install
             ```
-            You may have to try this command multiple times. If it fails in a
-            consistent way then seek help.
+            
+            Note: this command can be slow and buggy, especially if you are
+            using wsl 1. If the terminal hangs (nothing changes for a few
+            minutes) then try pressing enter. You may have to try this command
+            multiple times. If it fails in a consistent way seek help from a TA.
 
         4) Run the application
 
@@ -199,13 +225,13 @@ stack up and running.
             rails server
             ```
 
-        5) Open your browser and put [localhost:3000](localhost:3000) in the
-        address bar (or open the link)
+        5) Open your browser and put [localhost:3000](http://localhost:3000) in
+        the address bar (or open the link)
 
             You should see the basic rails splash page:
             ![splash page image](https://github.com/mjkern/67272-Windows-Setup/blob/master/rails_welcome.png?raw=true)
 
-            Congrats, you did it! (When you're done the key combination CTRL c
+            Congrats, you did it! (When you're done the key combination `CTRL c`
             will stop the server)
 
 4) Visual Studio Code
