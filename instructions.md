@@ -4,25 +4,70 @@ stack up and running.
 
 1) Windows Subsystem for Linux (WSL)
 
+    If you already have WSL 2 setup you can skip until at least step 6 section.
+    If you already have WSL 1 setup you can skip to step 2.
+    
     Installation instructions are based on [these Windows docs](https://docs.microsoft.com/en-us/windows/wsl/install-win10)
 
-    1) Enable the feature
+    1) Enable WSL
 
         Open windows powershell as an administrator and enter:
         ```
-        Enable-WindowsOptionalFeature -Online -FeatureName Microsoft-Windows-Subsystem-Linux
+        dism.exe /online /enable-feature /featurename:Microsoft-Windows-Subsystem-Linux /all /norestart
+        ```
+    
+    2) Enable extra option for WSL 2
+
+        In the same powershell window:
+        ```
+        dism.exe /online /enable-feature /featurename:VirtualMachinePlatform /all /norestart
         ```
 
-    2) Restart your computer when prompted
+        Note: 
+        We recommend WSL 2 for this class for performance and support reasons,
+        but there are a few reasons you might not want it:
 
-    3) Install Ubuntu 18.04 on WSL
+        1) You are running a [very old version](https://docs.microsoft.com/en-us/windows/wsl/install-win10#step-2---check-requirements-for-running-wsl-2)
+        of windows and it is not supported (probably only a problem if you have
+        avoided updates for over a year)
+        2) You need to run virtual machines on out-of-date vm software (older
+        than VMware 15.5.5 or VirtualBox 6)
+        3) You computer is managed by a mischevious power-hunger admin who has
+        locked virtualization off in the BIOS
 
-        Find [Ubuntu 18.04 in the Windows store](https://www.microsoft.com/store/apps/9N9TNGVNDL3Q)
+        Chances are that none of these are an issue but talk to Matt (mjkern) if
+        you have questions or concerns.
+
+    3) Restart your computer
+
+    4) Download and run the [WSL2 Linux kernel update package for x64 machines](https://wslstorestorage.blob.core.windows.net/wslblob/wsl_update_x64.msi)
+
+        Note: if you are running an ARM64 machine then you should instead use
+        the [ARM64 package](https://wslstorestorage.blob.core.windows.net/wslblob/wsl_update_arm64.msi). This probably is not you, but you can double
+        check with `systeminfo | find "System Type"` in powershell.
+    
+    5) Set the default WSL version to 2 for new installations
+
+        ```
+        wsl --set-default-version 2
+        ```
+
+        Note: you can always change this to version 1 later (with
+        `wsl --set-default-version 1`) if for some reason you want to install a
+        distribution on WSL 1 instead of WSL 2.    
+
+    6) Install Ubuntu 20.04 on WSL
+
+        Find [Ubuntu 20.04 LTS in the Windows store](https://www.microsoft.com/en-us/p/ubuntu-2004-lts/9n6svws3rx71?activetab=pivot:overviewtab)
         and select "Get" on the distro page. Then select "Install".
 
     4) Initialize your Ubuntu installation
 
-        1) Launch Ubuntu 18.04 (it will take a minute to open)
+        1) Launch an Ubuntu 20.04 terminal (it will take a few minutes)
+
+            Note: you can do this by searching for `Ubuntu 20.04`. You may want
+            to pin this to your start menu for easy access in the future
+
         2) When prompted, enter a username of your choice
         3) When prompted, enter a password of your choice
         4) Record the credentials for the account you just created somewhere
@@ -30,7 +75,7 @@ stack up and running.
         5) Make sure you are running the most recent software (and will use
         it in the future)
 
-            Enter this in the bash shell:
+            Enter this in terminal:
             ```
             sudo apt update && sudo apt upgrade
             ```
