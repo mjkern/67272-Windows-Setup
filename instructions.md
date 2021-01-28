@@ -12,7 +12,7 @@ Installation instructions are based on [these Windows docs](https://docs.microso
 1) Enable WSL
 
     Open windows powershell as an administrator and enter:
-    ```
+    ```bash
     dism.exe /online /enable-feature /featurename:Microsoft-Windows-Subsystem-Linux /all /norestart
     ```
 
