@@ -353,9 +353,11 @@ link)
 
     Use `Ctrl+c` in the terminal to stop the server when you are finished.
 
-### [Optional] Cutomizing Your Terminal
+### [Optional] More tools & configuration
 
-**This is not required, encouraged, or tested.**
+**These is not required, encouraged, or tested.**
+
+#### Terminal Configuration
 
 Proh H has a
 [customized variation of `oh-my-zsh`](https://github.com/profh/ohmyzsh) that he
@@ -373,6 +375,13 @@ That said, I personally would not worry about any of these customizations. It is
 good to be familiar with the default tools before you customize them, and I use
 almost no modifications to this day.
 
+#### Windows Terminal
+
+[Windows Terminal](https://aka.ms/terminal)
+provides a cleaner terminal than what comes with WSL by default. It allows for
+multiple tabs and makes it easy to work between powershell, command prompt, and
+(potentially multiple) WSL distributions.
+
 ## Author's Note
 
 These instructions were written by Matt Kern for use in Carnegie Mellon
@@ -384,4 +393,3 @@ questions:
 mjkern@andrew.cmu.edu
 
 qapla'
-
