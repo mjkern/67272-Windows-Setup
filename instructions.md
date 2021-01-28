@@ -236,36 +236,128 @@ stack up and running.
 
 4) Visual Studio Code
 
+    Note: Visual Studio Code is the *required* editor for this class. You also
+    must have the extensions mentioned in these instructions. If you already
+    have VS Code installed then skip to step 3.
+
     1) Go to [https://code.visualstudio.com/](https://code.visualstudio.com/)
     and select "Download for Windows"
+
     2) After the download completes run the installer and click through the
     prompts
+
     3) Open Visual Studio Code from the start menu
-    4) Select `File>Open Folder` and then select the `testapp` you created
-    5) You can now inspect all the files of your first rails app in VS Code, Congrats!
 
-## Advanced Notes
+    4) [Install the `Remote - WSL` extention](vscode:extension/ms-vscode-remote.remote-wsl)
+    for Visual Studion Code (click this link and then click "Install")
 
-* "Remote - WSL" looks like an interesting Visual Studio Code extension but I
-don't know much about it. There may also be other helpful ones
-* Other versions of Ubuntu will almost certainly work fine, I just suggest
-bionic beaver (18.04) here for simplicity. If you simply choose "Ubuntu" in
-the windows store then I believe it will keep you up to date with the most recent version
-* A note WSL:
+        If requested, reload Visual Studio Code.
+    
+    5) Open the command palette
 
-    There are currently two versions of WSL. I suspect that we all have the
-    original version but it may be possible that someone has WSL2. These are
-    fundamentally different - the original is a compatability layer around the
-    Windows kernal while WSL2 manages an entirely seperate kernal via a
-    hypervisor. I believe all of these instructions will work just as well
-    (probably better) on WSL2, but don't have an easy way to test that.
+        View > Command palette...
+
+        Or use the shortcut `Crtl+Shift+P`
+    
+    6) Enter `Remote-WSL: New window` to open a Visual Studio Code window that
+    is running from Ubuntu 20.04 on WSL instead of the current window which is
+    running from Windows 10.
+
+        Note: if you have more than one distribution installed you should use
+        the `Remote-WSL: New Window using Distro...` command and then specify
+        Ubuntu 20.04.
+    
+    7) When the new Visual Studio Code window opens, close the one that you were
+    working from
+
+    8) Find and open the extensions sidebar via the menu on the left side of the
+    screen. It should be the 5th option from the top.
+
+    9) Search for and install these extensions, as follows:
+
+        1) **Live Share** by Microsoft
+
+            A few seconds after you install you will see a toast in the
+            bottom-right corner of your screen with the message:
+            > We were unable to install support for joining sessions using a browser link. You may be missing key Linux libraries. Install them now?
+
+            Click `Install` on the toast message.
+
+            When promped, enter your password (the one you created today).
+
+            Reload VS Code when prompted.
+
+            There will be another toast:
+            > To support joining a session using a browser link, we need permission to run an installer on your system. Your OS may ask you for your admin (sudo) password in a terminal. Install now?
+
+            Once again, click `Install` and enter you password.
+        
+        2) **Live Server** by Ritwick Dey
+
+    10) Configure the terminal
+
+        1) Open settings
+
+            File > Preferences > Settings
+
+            Or `Ctrl+,`
+
+        2) Search for `Shell Args` and find the setting entitled
+            *Terminal > Integrated > Sell Args: Linux*
+
+        3) Click the `Add Option` button under this setting
+
+        4) Enter `-l` and click `OK`. FYI, that is a lowercase l, as in lion.
+
+            FYI, this configures you terminal to open as a login shell by
+            default. This is important for `rails` and a number of other tools.
+
+    11) Select `File>Open Folder` and then give the directory to the `testapp`
+    folder in the prompt. Click `OK`.
+
+        Note: if you followed the recommendation above then this will be
+        `/home/<your Ubuntu username>/lab01/testapp/`
+
+    12) You should now be able to see all of the files in the `testapp`
+    application that you created earlier. Open a few of them to get used to
+    Visual Studio Code.
+
+    13) Open a terminal through VS Code
+
+        Terminal > New Terminal
+
+        Or `` Ctrl+Shift+` ``
+
+        Note: This terminal is almost exactly like the one you used outside of
+        Visual Studio Code earlier, but notice a few things:
+
+        - You can paste into this terminal with `Ctrl+Shift+V` or `Shift+Insert`
+        or right-click
+        - You can copy from this terminal with `Ctrl+Shift+C`
+        - It defaults to the project directory that you have open instead of
+        your home directory
+        - There is nice syntax highlighting and hyperlinks are clickable
+    
+    14) In this new terminal, run the web application
+
+        ```
+        rails server
+        ```
+    15) Once again, open your browser and put
+    [localhost:3000](http://localhost:3000) in the address bar (or open the
+    link)
+
+        You should see the same welcome page that you saw before.
+        Congratulations, you are all setup!
+
+        Use `Ctrl+c` in the terminal to stop the server when you are finished.
 
 ## Author's Note
 
 These instructions were written by Matt Kern for use in Carnegie Mellon
 Univeristy's 67272.
 
-Please let me know if you have any problems with this, find typos, or have
+Please let me know if you have any problems, find typos, or have
 questions:
 
 mjkern@andrew.cmu.edu
