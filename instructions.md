@@ -12,14 +12,14 @@ Installation instructions are based on [these Windows docs](https://docs.microso
 1) Enable WSL
 
     Open windows powershell as an administrator and enter:
-    ```bash
+    ```powershell
     dism.exe /online /enable-feature /featurename:Microsoft-Windows-Subsystem-Linux /all /norestart
     ```
 
 2) Enable extra option for WSL 2
 
     In the same powershell window:
-    ```
+    ```powershell
     dism.exe /online /enable-feature /featurename:VirtualMachinePlatform /all /norestart
     ```
 
@@ -46,9 +46,10 @@ Installation instructions are based on [these Windows docs](https://docs.microso
     the [ARM64 package](https://wslstorestorage.blob.core.windows.net/wslblob/wsl_update_arm64.msi). This probably is not you, but you can double
     check with `systeminfo | find "System Type"` in powershell.
 
-5) Set the default WSL version to 2 for new installations
+5) Set the default WSL version to 2 for new installations with this powershell
+    command:
 
-    ```
+    ```powershell
     wsl --set-default-version 2
     ```
 
@@ -76,7 +77,7 @@ Installation instructions are based on [these Windows docs](https://docs.microso
     it in the future)
 
         Enter this in terminal:
-        ```
+        ```bash
         sudo apt update -y && sudo apt upgrade -y
         ```
 
@@ -98,19 +99,19 @@ Installation instructions are based on [these Windows docs](https://docs.microso
     is slower and we will recommend that you keep files for this class all
     in the linux file system that you are in right now
 
-        ```
+        ```bash
         cd /mnt/c
         ```
 
         or, you can probably get all the way to your Documents folder with
-        ```
+        ```bash
         cd /mnt/c/Documents\ and\ Settings/<your windows username>/Documents
         ```
         where `<your windows username>` is the first 4 characters of your
         windows username.
 
         Note: on wsl 1 this is more likely
-        ```
+        ```bash
         cd /mnt/c/Users/<your windows username>/Documents
         ```
 
@@ -123,7 +124,7 @@ Installation instructions are based on [these Windows docs](https://docs.microso
 ### Install Ruby 2.6.6
 1) Install gpg2 (a prerequisite for rvm)
 
-    ```
+    ```bash
     sudo apt install -y gnupg2
     ```
     Note: unless otherwise specified all of these instructions are meant
@@ -131,7 +132,7 @@ Installation instructions are based on [these Windows docs](https://docs.microso
 
 2) Install rvm (based on [these instructions](https://rvm.io/))
 
-    ```
+    ```bash
     gpg2 --recv-keys 409B6B1796C275462A1703113804BB82D39DC0E3 7D2BAF1CF37B13E2069D6956105BD0E739499BDB
     \curl -sSL https://get.rvm.io | bash -s stable
     ```
@@ -143,13 +144,13 @@ Installation instructions are based on [these Windows docs](https://docs.microso
 
 4) Install Ruby 2.6.6 (this may take a minute)
 
-    ```
+    ```bash
     rvm install 2.6.6
     ```
 
 5) Set default Ruby version
 
-    ```
+    ```bash
     bash --login
     rvm --default use 2.6.6
     ```
@@ -158,7 +159,7 @@ Installation instructions are based on [these Windows docs](https://docs.microso
 
 7) Check installation
 
-    ```
+    ```bash
     rvm list
     ```
     You should see `=* ruby-2.6.6` in the output.
@@ -166,14 +167,14 @@ Installation instructions are based on [these Windows docs](https://docs.microso
 ### Install Rails 5.2.4.4
 1) Install nodejs (a prerequisite)
 
-    ```
+    ```bash
     curl -sL https://deb.nodesource.com/setup_12.x | sudo -E bash -
     sudo apt install -y nodejs
     ```
 
 2) Install Rails 5.2.4.4 (this may take a few minutes)
 
-    ```
+    ```bash
     gem install rails -v=5.2.4.4
     ```
 
@@ -190,27 +191,27 @@ Installation instructions are based on [these Windows docs](https://docs.microso
         performance reasons (if you are using WSL 2).
 
         So use `mkdir` and `cd` to get where you want to be. For example:
-        ```
+        ```bash
         mkdir lab01
         cd lab01
         ```           
 
     2) Create an application with the name "testapp"
 
-        ```
+        ```bash
         rails new testapp
         ```
         (this may take a minute)
 
     3) Change diretories into the new application
 
-        ```
+        ```bash
         cd testapp
         ```
 
     4) Install the new app's dependencies
 
-        ```
+        ```bash
         bundle install
         ```
         
@@ -221,7 +222,7 @@ Installation instructions are based on [these Windows docs](https://docs.microso
 
     4) Run the application
 
-        ```
+        ```bash
         rails server
         ```
 
@@ -340,7 +341,7 @@ Visual Studio Code.
 
 14) In this new terminal, run the web application
 
-    ```
+    ```bash
     rails server
     ```
 15) Once again, open your browser and put
