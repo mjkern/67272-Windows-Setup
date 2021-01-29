@@ -168,8 +168,7 @@ Installation instructions are based on [these Windows docs](https://docs.microso
 1) Install nodejs (a prerequisite)
 
     ```bash
-    curl -sL https://deb.nodesource.com/setup_12.x | sudo -E bash -
-    sudo apt install -y nodejs
+    curl -sL https://deb.nodesource.com/setup_12.x | sudo -E bash - && sudo apt install -y nodejs
     ```
 
 2) Install Rails 5.2.4.4 (this may take a few minutes)
