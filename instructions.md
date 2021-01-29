@@ -186,9 +186,13 @@ Installation instructions are based on [these Windows docs](https://docs.microso
 
         I recommend creating a folder for each lab (and phase) right where
         you are, the `home` directory. You will be here by default when you
-        open a terminal, and can always get back here with `cd ~`. You
-        should avoid working in any path that begins with `/mnt/` for
-        performance reasons (if you are using WSL 2).
+        open a terminal, and can always get back here with `cd ~`.
+        
+        **Avoid working in any path that begins with `/mnt/c/`** as this will
+        almost certainly cause issues with `rails new`, `git init`, `chmod`,
+        and other important commands because of the way that wsl translates (or
+        fails to translate) file permissions. If you're intersted, there is 
+        [more info and a potential work-around](https://github.com/microsoft/WSL/issues/81#issuecomment-409620796).
 
         So use `mkdir` and `cd` to get where you want to be. For example:
         ```bash
@@ -202,6 +206,15 @@ Installation instructions are based on [these Windows docs](https://docs.microso
         rails new testapp
         ```
         (this may take a minute)
+
+        Debugging Tip - If you executed this command in you windows file system
+        (any path that begins with `/mnt/c/`) then you probably get this error:
+        > error: chmod on /mnt/c/Users/mjker/Documents/TAing/testapp2/.git/config.lock failed: Operation not permitted
+        >
+        > fatal: could not set 'core.filemode' to 'false'
+
+        Solution - work in a directory that does not begin with `/mnt/c/`,
+        probably `~`.
 
     3) Change diretories into the new application
 
