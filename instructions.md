@@ -400,8 +400,8 @@ multiple tabs and makes it easy to work between powershell, command prompt, and
 
 So you want to switch to an older version of rails. You need two commands:
 ```
-gem uninstal rails
-gem uninstal railties
+gem uninstall rails
+gem uninstall railties
 ```
 
 If you have more than one version installed these will ask you to select a
