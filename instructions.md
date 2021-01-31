@@ -394,6 +394,33 @@ provides a cleaner terminal than what comes with WSL by default. It allows for
 multiple tabs and makes it easy to work between powershell, command prompt, and
 (potentially multiple) WSL distributions.
 
+### FAQs
+
+#### Downgrading Rails
+
+So you want to switch to an older version of rails. You need two commands:
+```
+gem uninstal rails
+gem uninstal railties
+```
+
+If you have more than one version installed these will ask you to select a
+version. You must uninstall any versions with a version number that is greater
+than your desired version. You will have to use these commands more than once if
+you need to uninstall more than one version.
+
+If you do not have your desired version installed then you will have to use:
+```
+gem instal rails -v=<your desired version number>
+```
+
+You may also find these commands helpful:
+- `rails -v`: the current version of rails
+- `gem which rails`: the location of the current version of rails
+- `gem info rails`: information about all versions of rails you have installed
+- `gem info railties`: information about all versions of railties that you have
+    installed
+
 ## Author's Note
 
 These instructions were written by Matt Kern for use in Carnegie Mellon
