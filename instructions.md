@@ -377,8 +377,8 @@ these out by using [his dotfiles](https://github.com/profh/dotfiles)
 
 These dotfiles are for customizing bash (the shell you use on Ubuntu by
 default), but Apple has begun using zsh instead of bash. Therefore, Proh H has a
-[customized variation of `oh-my-zsh`](https://github.com/profh/ohmyzsh) that he
-allows students to use. Joao Grassi has an explanation of how he set this up on
+[customized variation of `oh-my-zsh`](https://github.com/profh/ohmyzsh) that you
+could use instead. Joao Grassi has an explanation of how he set this up on
 Windows
 [in this blog post](https://blog.joaograssi.com/windows-subsystem-for-linux-with-oh-my-zsh-conemu/).
 You are welcome to try this out if you so desire. Notice that you will have to
