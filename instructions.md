@@ -371,17 +371,18 @@ link)
 
 #### Terminal Configuration
 
-Proh H has a
+Prof H like to have some terminal shortcuts and customizations. You too can try
+these out by using [his dotfiles](https://github.com/profh/dotfiles)
+(instructions are in the repo).
+
+These dotfiles are for customizing bash (the shell you use on Ubuntu by
+default), but Apple has begun using zsh instead of bash. Therefore, Proh H has a
 [customized variation of `oh-my-zsh`](https://github.com/profh/ohmyzsh) that he
 allows students to use. Joao Grassi has an explanation of how he set this up on
 Windows
 [in this blog post](https://blog.joaograssi.com/windows-subsystem-for-linux-with-oh-my-zsh-conemu/).
 You are welcome to try this out if you so desire. Notice that you will have to
 change the install script url to match that of Prof H's repo.
-
-Alternatively, you can use
-[Prof H's dotfiles](https://github.com/profh/dotfiles) as a means of customizing
-the default (bash) shell instead of installing zsh.
 
 That said, I personally would not worry about any of these customizations. It is
 good to be familiar with the default tools before you customize them, and I use
