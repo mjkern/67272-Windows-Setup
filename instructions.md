@@ -367,7 +367,7 @@ link)
 
 ### [Optional] More tools & configuration
 
-**These is not required, encouraged, or tested.**
+**These are not required, encouraged, or tested.**
 
 #### Terminal Configuration
 
