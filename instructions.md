@@ -119,7 +119,7 @@ Installation instructions are based on [these Windows docs](https://docs.microso
     [a cheat sheet for common terminal commands](http://www.mathcs.emory.edu/~valerie/courses/fall10/155/resources/unix_cheatsheet.html)
 
     - if you start typing something terminal, entering a tab will try to
-    autocomplete the command 
+    autocomplete the command
 
 ### Install Ruby 2.6.6
 1) Install gpg2 (a prerequisite for rvm)
@@ -306,6 +306,10 @@ screen. It should be the 5th option from the top.
         Once again, click `Install` and enter you password.
     
     2) **Live Server** by Ritwick Dey
+    3) **VSCode Ruby** by Stafford Brunk (a great extension by a IS alumi)
+    4) **Ruby** by Peng Lv
+
+        Reload Visual Studio Code if an error message prompts you to do so.
 
 10) Configure the terminal
 
