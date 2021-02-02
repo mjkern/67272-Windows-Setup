@@ -306,7 +306,10 @@ screen. It should be the 5th option from the top.
         Once again, click `Install` and enter you password.
     
     2) **Live Server** by Ritwick Dey
-    3) **VSCode Ruby** by Stafford Brunk (a great extension by a IS alumi)
+
+    3) **VSCode Ruby** by Stafford Brunk (a great extension by a former 67-272
+        TA)
+        
     4) **Ruby** by Peng Lv
 
         Reload Visual Studio Code if an error message prompts you to do so.
